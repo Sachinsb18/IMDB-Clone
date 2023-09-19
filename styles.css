@@ -1,0 +1,197 @@
+/* all link have common css  */
+a:link{
+    text-decoration: none;
+    color:rgb(32, 1, 1);
+}
+body{
+    /* width: 100vw; */
+    /* height: 100vh; */
+    background-color: rgb(56, 56, 56);
+    font-family: 'Didact Gothic', sans-serif;
+    position: relative;
+    /* font-family: 'Montserrat', sans-serif; */
+}
+
+
+/* Setting the background image and apply a blur effect */
+.blur-background {
+    background-image: url('IMDb-Logo.jpg'); 
+    background-size: cover;
+    filter: blur(25px); /*  To adjust the blur amount as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Places the background behind other content */
+}
+
+/*---------- Navbar Styling-------- */
+
+
+.nav-menu{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color:var(--black);
+}
+
+/* --------Navbar logo------------ */
+.logo-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 10%;
+    min-width: 170px;
+    font-size: 1rem;
+    font-weight: 800;
+    color:white;
+    box-sizing: border-box;
+}
+
+.logo-img{
+    width: 150px;
+    height:35px;
+}
+
+/* navbar search bar */
+
+/* css for search box  */
+.search-box{
+    display: flex;
+    width:70%;
+    /* justify-content: center; */
+    align-items: center;
+    /* flex-grow: 1; */
+    position: relative;
+}
+/* sarch box input css  */
+.search-box input {
+    width: 80%;
+    height: 30px;
+    /* padding-left: 10px; */
+    border-radius: 6px;
+    /* min-width: 200px; */
+    border: solid 1px grey;
+    font-size: 1rem;
+    background: transparent;
+}
+/* search icon  */
+#search-icon{
+    position: absolute;
+    right: 230px;
+    cursor: pointer;
+}
+/* #diff-color{
+    color: aqua;
+    cursor: pointer;
+} */
+
+/* Favourite link */
+.favourites{
+    position: absolute;
+    right:50px;
+}
+
+.hover:hover{
+    transform: scale(1.05);
+}
+
+/* css for movie content which is coming through API  */
+/* i give this class and id , when we acces element by script  */
+
+#movies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    /* align-items: center; */
+}
+/* movie element container css  */
+.movie-element{
+    box-sizing: border-box;
+    width: 300px;
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow:1px 4px 5px rgba(141, 141, 141, 0.2) , -2px -4px 5px rgba(218, 207, 207, 0.2);
+    background-color: #232330;
+    position: relative;
+    overflow: hidden;
+}
+/* image of movie element  */
+.movie-element img{
+    width: 100%;
+    min-height: 80%;
+    border-radius: 10px;
+}
+/* movie information box css  */
+.movie-info{
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    padding-bottom:0.7rem;
+    letter-spacing: 0.5px;
+}
+/* star icon css  */
+.star-fab{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.25rem 0.5rem;
+    font-weight: bold;
+}
+.star-fab span{
+    background-color: #b3cfd8;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+.icon-color{
+    color: red;
+}
+/* overview text related css it came when we access TMDb Api  */
+.overview{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 1rem;
+    background-color:inherit;
+    color: #fff;
+    font-size: .8rem;
+    max-height: 100%;
+    transform:translateY(-101%);
+    transition: transform 0.4s ease-in;
+}
+/* css for awsom animation when you hover container  */
+.movie-element:hover .overview{
+    transform: translateY(0);
+}
+
+/* page navigation button css  */
+.page-navigate{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    padding-bottom: 20px;
+}
+.page-navigate button{
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    color: rgb(32, 1, 1);
+    border: solid 1px #520303;
+    background:transparent;
+    font: 1.2rem;
+    font-weight: 600;
+}
+.page-navigate button:hover{
+    transform: scale(1.1);
+    background:transparent;
+    
+}
