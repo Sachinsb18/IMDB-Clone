@@ -80,10 +80,15 @@ body{
     background: transparent;
 }
 /* search icon  */
-#search-icon{
+.search-icon{
     position: absolute;
-    right: 230px;
+    right: 209px;
     cursor: pointer;
+    height:30px;
+    width:50px;
+    background-color: lightblue;
+    border-radius: 5px;
+    border: none;
 }
 /* #diff-color{
     color: aqua;
@@ -129,15 +134,19 @@ body{
 }
 /* movie information box css  */
 .movie-info{
-    color: var(--white);
+    color: white;
     display: flex;
     flex-direction: column;
     align-items:center;
     padding-bottom:0.7rem;
     letter-spacing: 0.5px;
 }
-/* star icon css  */
-.star-fab{
+
+.movie-element:hover{
+    transform: scale(1.05);
+}
+/* heart icon css  */
+.heart-fab{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -145,34 +154,19 @@ body{
     padding: 0.25rem 0.5rem;
     font-weight: bold;
 }
-.star-fab span{
-    background-color: #b3cfd8;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-}
-.icon-color{
-    color: red;
-}
-/* overview text related css it came when we access TMDb Api  */
-.overview{
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    padding: 1rem;
-    background-color:inherit;
-    color: #fff;
-    font-size: .8rem;
-    max-height: 100%;
-    transform:translateY(-101%);
-    transition: transform 0.4s ease-in;
-}
-/* css for awsom animation when you hover container  */
-.movie-element:hover .overview{
-    transform: translateY(0);
+
+
+.favourite-button{
+    border: none;
+    height: 30px;
+    width: 50px;
+    border: solid 1px #520303;
+    background:lightcoral;
+    
 }
 
-/* page navigation button css  */
+
+/* page navigation button css 
 .page-navigate{
     display: flex;
     justify-content:center;
@@ -194,4 +188,13 @@ body{
     transform: scale(1.1);
     background:transparent;
     
-}
+} */
+
+
+
+/* // API key given by OMDb
+const API_KEY = '832bc9d0';
+
+//  Base URL for fetching the movies
+const API_URL = `http://www.omdbapi.com/?s=new&type=movie&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate&y=2023&apikey=${API_KEY}`;
+ */
