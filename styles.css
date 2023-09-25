@@ -1,11 +1,11 @@
 /* all link have common css  */
-a:link{
+a{
     text-decoration: none;
-    color:rgb(3, 1, 1);
+    color:black;
+    border: none !important;
 }
 body{
-    /* width: 100vw; */
-    /* height: 100vh; */
+    
     background-color: rgb(56, 56, 56);
     font-family: 'Didact Gothic', sans-serif;
     position: relative;
@@ -55,6 +55,7 @@ body{
 .logo-img{
     width: 150px;
     height:35px;
+    margin-top:5px
 }
 
 /* navbar search bar */
@@ -62,27 +63,24 @@ body{
 /* css for search box  */
 .search-box{
     display: flex;
-    width:70%;
-    /* justify-content: center; */
-    align-items: center;
-    /* flex-grow: 1; */
+    width:100%;    
+    align-items: center;    
     position: relative;
+    margin-left: 90px;
 }
 /* sarch box input css  */
 .search-box input {
     width: 80%;
-    height: 30px;
-    /* padding-left: 10px; */
-    border-radius: 6px;
-    /* min-width: 200px; */
-    border: solid 1px grey;
+    height: 30px;    
+    border-radius: 6px;    
+    border: solid 2px grey;
     font-size: 1rem;
     background: transparent;
 }
 /* search icon  */
 .search-icon{
     position: absolute;
-    right: 209px;
+    right: 255px;
     cursor: pointer;
     height:30px;
     width:50px;
@@ -90,15 +88,12 @@ body{
     border-radius: 5px;
     border: none;
 }
-/* #diff-color{
-    color: aqua;
-    cursor: pointer;
-} */
 
 /* Favourite link */
 .favourites{
     position: absolute;
     right:50px;
+    margin-top: 10px;
 }
 
 .hover:hover{
@@ -106,19 +101,21 @@ body{
 }
 
 /* css for movie content which is coming through API  */
-/* i give this class and id , when we acces element by script  */
 
+/* the container for each movie to diaplay */
 #movies{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     box-sizing: border-box;
-    /* align-items: center; */
+    
 }
 /* movie element container css  */
 .movie-element{
     box-sizing: border-box;
     width: 300px;
+    height:auto;
+    padding-bottom:5px;
     margin: 1rem;
     border-radius: 3px;
     box-shadow:1px 4px 5px rgba(141, 141, 141, 0.2) , -2px -4px 5px rgba(218, 207, 207, 0.2);
@@ -129,7 +126,7 @@ body{
 /* image of movie element  */
 .movie-element img{
     width: 100%;
-    min-height: 80%;
+    max-height: 80%;
     border-radius: 10px;
 }
 /* movie information box css  */
@@ -138,32 +135,37 @@ body{
     display: flex;
     flex-direction: column;
     align-items:center;
-    padding-bottom:0.7rem;
+    text-align:center;    
     letter-spacing: 0.5px;
 }
 
 .movie-element:hover{
     transform: scale(1.05);
 }
-/* heart icon css  */
-.heart-fab{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0.25rem 0.5rem;
-    font-weight: bold;
+
+    /* Buttons to add movie to favourite and to view more about thhe movie */
+.buttons-box{
+    width:80%;
 }
 
-
-.favourite-button{
-    border: none;
-    height: 30px;
-    width: 50px;
+/* add to favourite button */
+ .favourite-button{
+    height: 35px;
+    width: 100%;    
     border: solid 1px #520303;
-    background:lightcoral;
+    background:lightcoral !important;  
     
+ }  
+
+ /* more button */
+.more-button{
+    border: solid 1px black;
+    height: 35px;
+    width: 100%;   
+
 }
+
+
 
 
 /* page navigation button css 

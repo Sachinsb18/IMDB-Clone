@@ -2,14 +2,23 @@ const apiKey = '832bc9d0';
 
 // Function to search for movies
 async function searchMovies(query) {
-    const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${query}`);
-    const data = await response.json();
-    return data.Search || [];
+    let allResults=[];
+    for(let page=0;page<=3;page++){          //fetching first 3 page result
+        const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${query}`);
+        const data = await response.json();
+        
+        allResults= allResults.concat(data.Search);
+    }
+    // const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${query}`);
+    // const data = await response.json();
+    // return data.Search || [];
+    return allResults;
 }
 
 // Function to add a movie to favourites
 async function addToFavourites(event) {
-    const imdbID = event.target.dataset.imdbid;
+    const imdbID = event.target.id;
+    // console.log(imdbID);        
     const movie = await getMovieDetails(imdbID);
     if (movie) {
         const favouritesList = JSON.parse(localStorage.getItem('favourites')) || [];
@@ -34,24 +43,20 @@ function displaySearchResults(results) {
         movieCard.innerHTML = `
         <img src="${movie.Poster}" alt="image-h">
         <div class="movie-info">
-          <h3>${movie.Title}</h3>
-          <div class="heart-fab">
-            <button class="favourite-button" data-imdbid="${movie.imdbID}><i class="fa-solid fa-heart fa-2x"></i></button>            
+          <h4>${movie.Title}</h4>
+          <div class="d-grid gap-2 col-6 mx-auto buttons-box">
+          <button class="btn btn-primary btn-lg favourite-button" id="${movie.imdbID}">Add to Favourites</button>
+          <button  class="btn btn-secondary btn-lg more-button"><a href="movie.html?id=${movie.imdbID}">More</a>
           </div>
-        </div>          
+          </div>         
         `;
+        // console.log(`Button ID for ${movie.Title}: ${movie.imdbID}`);
+
         searchResultsContainer.appendChild(movieCard);
     });
-
-      // <img src="${movie.Poster}" class="card-img-top" alt="${movie.Title}">
-            // <div class="card-body">
-            //     <h5 class="card-title">${movie.Title}</h5>
-            //     <button class="btn btn-primary btn-sm favourite-button" data-imdbid="${movie.imdbID}">Add to Favourites</button>
-            //     <a href="movie.html?id=${movie.imdbID}" class="btn btn-secondary btn-sm more-button">More</a>
-            // </div>
-
     const favouriteButtons = document.querySelectorAll('.favourite-button');
     favouriteButtons.forEach(button => {
+        
         button.addEventListener('click', addToFavourites);
     });
 }
@@ -65,7 +70,7 @@ searchButton.addEventListener('click', function () {
             .then(results => {
                 displaySearchResults(results);
                 // Store the search results in LocalStorage
-                localStorage.setItem('searchResults', JSON.stringify(results));
+                localStorage.setItem('movies', JSON.stringify(results));
             })
             .catch(error => console.error('Error searching movies:', error));
     }
@@ -73,14 +78,14 @@ searchButton.addEventListener('click', function () {
 
 
 
-// // Function to get movie details by IMDb ID
-// async function getMovieDetails(imdbID) {
-//     const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&i=${imdbID}`);
-//     const data = await response.json();
-//     return data.Response === 'True' ? data : null;
-// }
+// Function to get movie details by IMDb ID
+async function getMovieDetails(imdbID) {
+    const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&i=${imdbID}`);
+    const data = await response.json();
+    return data.Response === 'True' ? data : null;
+}
 
-// Automatically display search results if available from previous search
+// // Automatically display search results if available from previous search
 // const previousSearchResults = JSON.parse(localStorage.getItem('searchResults'));
 // if (previousSearchResults && previousSearchResults.length > 0) {
 //     displaySearchResults(previousSearchResults);

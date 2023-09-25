@@ -1,4 +1,4 @@
-.body{
+/* .body{
     width: 100vw;
     height: 100vh;
     margin:0 0;
@@ -6,7 +6,7 @@
 }
 /* navbar style */
 
-.nav-menu{
+/* .nav-menu{
     height: 50px;
     width: 100%;
     display: flex;
@@ -14,93 +14,16 @@
     justify-content: space-between;
     background:transparent;
     position: relative;
-}
-.favourites>h3{
-font-size: 2.5rem;
-text-align: center;
-position: absolute;
-right: 600px;
-margin-top: 5px;
+} */
 
-}
+/* .logo-img{
+    border:none;
+
+
+} */
 
 
 
-/* copied */
-/* my-favorite css  */
-.my-fav{
-    color: #fff;
-    font-size: 1.2rem;
-    padding-top:7px;
 
-}
-/* main header section css  of myfavorite page */
-#header{
-    margin: auto;
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    margin: 15px auto;
-}
-/* clear all and home btn related css  */
-.fab-btn{
-    padding: 6px 12px;
-    background : transparent;
-    font-size: 1rem;
-    border-radius: 5px;
-    color: #551A8B;
-    font-weight: 600;
-    border: 1px solid rgb(3, 1, 1);
-    cursor: pointer;
-}
-.fab-btn:hover{
-    transform: scale(1.05);
-}
-#header span{
-    /* color: #fff; */
-    color: #662549;
-    font-size: 1.5rem;
-    font-weight: 700;
-}
 
-/* movies element cart  */
-#list-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.movie-details{
-    margin: 20px;
-    border-radius: 20px;
-    background-color: rgb(88, 76, 33);
-}
-/* movie image  */
-#movieimg{
-    border-radius: 20px;
-    height: 420px;
-    width: 310px;
-}
-/* detais css  */
-#details{
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    align-items: center;
-}
-/* title of movie  */
-.title{
-    max-width: 200px;
-}
-.title a{
-    font-size: 1.2rem;
-    color: white;
-    text-decoration: none;
-}
-/* remove movie icon  */
-#removeicon{
-    font-size: 1.6rem;
-    color: red;
-    cursor: pointer;
-}
+ 
