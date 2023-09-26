@@ -13,5 +13,5 @@ Features:
 3. Movie-Detail-Page: you can get to yjis pagge by  clicking more button on searched movie list or on favourite movie page.
                       Can see more deatil about the movie like plot, year of release, director....etc,
 
-Hosted link :
+Hosted link : https://sachinsb18.github.io/IMDb-Clone/
    

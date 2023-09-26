@@ -1,4 +1,4 @@
-// const apiKey = '832bc9d0'; API key given by OMDb 
+ const apiKey = '832bc9d0';  // API key given by OMDb 
 
 // Function to search for movies
 async function searchMovies(query) {
@@ -51,6 +51,7 @@ function displaySearchResults(results) {
 
         searchResultsContainer.appendChild(movieCard);
     });
+    // adding event listeners for add to favourite button
     const favouriteButtons = document.querySelectorAll('.favourite-button');
     favouriteButtons.forEach(button => {
         
