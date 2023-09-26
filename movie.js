@@ -20,6 +20,7 @@ function displayMovieDetails(movie) {
                 <h4 class="card-title">${movie.Title}</h4>
                 <p>${movie.Plot}</p>
                 <p><strong>Year:</strong> ${movie.Year}</p>
+                <p><strong>Cast:</strong> ${movie.Actors}</p>
                 <p><strong>Director:</strong> ${movie.Director}</p>
                 <p><strong>Genre:</strong> ${movie.Genre}</p>
                 <p><strong>Runtime:</strong> ${movie.Runtime}</p>
