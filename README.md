@@ -1,6 +1,7 @@
 # IMDb-Clone
 
 This project is created with HTML5,CSS-3 and vanilla javascript.
+
 Features:
 1. HomePage: Search any movie by its name. It can be either full name of the movie or just a word from that movie. It shows  all the movies relaated to your search.
             You can also add movies to your favourite list and also know more about movie by clicking more button at the end.
